@@ -1,0 +1,112 @@
+[
+  {
+    "title": "homeTeather",
+    "description": "Sony muteki 5.2",
+    "price": 100730,
+    "thumbnails": [],
+    "code": "abc569",
+    "stock": 355,
+    "status": true,
+    "category": "homeTeather",
+    "id": "3RQpbpgLKfxaFaLdvIUC4"
+  },
+  {
+    "title": "mouse",
+    "description": "barataso",
+    "price": 570,
+    "thumbnails": [],
+    "code": "abc119",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "fVwkCau6yiOEP1LznIdtV"
+  },
+  {
+    "title": "notebook",
+    "description": "la mas rapida",
+    "price": 150000,
+    "thumbnails": [],
+    "code": "abc120",
+    "stock": 25,
+    "status": true,
+    "category": "Notebooks",
+    "id": "r8p3qHzuGxyJLE0fuYTJY"
+  },
+  {
+    "title": "camara",
+    "description": "camara web",
+    "price": 4570,
+    "thumbnails": [],
+    "code": "abc121",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "A1xtu3HILs0VJ3pMIoDwj"
+  },
+  {
+    "title": "xbox 360",
+    "description": "de 250gb",
+    "price": 9730,
+    "thumbnails": [],
+    "code": "abc122",
+    "stock": 25,
+    "status": true,
+    "category": "Consolas",
+    "id": "HG0ApjaOT-ikAItRtz7Ha"
+  },
+  {
+    "title": "router",
+    "description": "fjrg4k-2",
+    "price": 12345,
+    "thumbnails": [],
+    "code": "abc123",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "Duhv7YQqVrvADRoL2cHH8"
+  },
+  {
+    "title": "impresora",
+    "description": "laser",
+    "price": 35780,
+    "thumbnails": [],
+    "code": "abc124",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "AW6-S6bAla7_TFqlAmwfy"
+  },
+  {
+    "title": "smart-tv",
+    "description": "50 pulgadas",
+    "price": 46830,
+    "thumbnails": [],
+    "code": "abc125",
+    "stock": 25,
+    "status": true,
+    "category": "smart-tvs",
+    "id": "8UFLi2FNGNBj3RQ0PoMLb"
+  },
+  {
+    "title": "placaVideo",
+    "description": "Rtx3070 de 8gb",
+    "price": 97300,
+    "thumbnails": [],
+    "code": "abc126",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "z5G87Vtzaw8QJpu5IOC_h"
+  },
+  {
+    "title": "Monitor",
+    "description": "32 pulgadas",
+    "price": 12730,
+    "thumbnails": [],
+    "code": "abc127",
+    "stock": 30,
+    "status": true,
+    "category": "Monitores",
+    "id": "ty6SDpEdNlPOYP-AGOX1A"
+  }
+]
