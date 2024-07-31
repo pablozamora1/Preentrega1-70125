@@ -108,5 +108,16 @@
     "status": true,
     "category": "Monitores",
     "id": "ty6SDpEdNlPOYP-AGOX1A"
+  },
+  {
+    "title": "router",
+    "description": "fjrg4k-2",
+    "price": 12345,
+    "thumbnails": [],
+    "code": "abc190",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "MhjHlx9jWzkoadG9HoJ86"
   }
 ]

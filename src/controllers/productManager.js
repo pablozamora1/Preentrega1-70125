@@ -28,8 +28,21 @@ class ProductManager {
   // FUNCION PARA AGREGAR PRODUCTOS AL ARCHIVO JSON
   async addProducts(product) {
     try {
+      let { title, description, price, thumbnail, code, stock } = product;
+
+      if (!title || !description || !price || !code || !stock) {
+        console.log("Todos los campos son obligatorios");
+        return;
+      }
+
       const readProd = await this.readFiles();
+      
+      if (readProd.some((item) => item.code === code)) {
+        console.log(`Codigo ${code} Repetido `);
+        return;
+      }
       product.id = nanoid();
+      console.log(product);
       const allProducts = [...readProd, product];
       await this.writeProduct(allProducts);
       return "Producto Añadido";
@@ -37,6 +50,7 @@ class ProductManager {
       console.log("Error al escribir el archivo", error);
     }
   }
+
   // FUNCION PARA OBTENER LOS PRODUCTOS
   async getProducts() {
     try {
