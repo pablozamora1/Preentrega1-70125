@@ -62,8 +62,6 @@ class ProductManager {
     }
   }
 
-
-
   // FUNCION PARA ACTUALIZAR UN PRODUCTO
   async updateProduct(pid, updatedProduct) {
     try {

@@ -16,8 +16,15 @@ router.get("/:pid", async (req, res) => {
 });
 // traer los productos
 router.get("/", async (req, res) => {
-  res.send(await product.getProducts());
+  const limit = req.query.limit;
+  const products = await product.getProducts();
+  if (limit) {
+    res.json(products.slice(0, limit));
+  } else {
+    res.json(products);
+  }
 });
+
 // delete productos
 router.delete("/:pid", async (req, res) => {
   const pid = req.params.pid;
