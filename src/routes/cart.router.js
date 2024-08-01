@@ -18,7 +18,7 @@ router.get("/:cId", async (req, res) => {
   const cId = req.params.cId;
   res.send(await cart.getCartById(cId));
 });
-
+// agregar productos al carrito
 router.post("/:cId/products/:pId", async (req, res) => {
   const idCart = req.params.cId;
   const idProduct = req.params.pId;
