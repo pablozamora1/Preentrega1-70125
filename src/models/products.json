@@ -4,6 +4,17 @@
     "description": "fjrg4k-2",
     "price": 12345,
     "thumbnails": [],
+    "code": "abc190",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "z5G87Vtzaw8QJpu5IOC_"
+  },
+  {
+    "title": "router",
+    "description": "fjrg4k-2",
+    "price": 12345,
+    "thumbnails": [],
     "code": "abc140",
     "stock": 25,
     "status": true,
@@ -130,5 +141,27 @@
     "status": true,
     "category": "Componentes PC",
     "id": "pT1oRneUIB88JQ5ai6VCQ"
+  },
+  {
+    "title": "router",
+    "description": "fjrg4k-2",
+    "price": 12345,
+    "thumbnails": [],
+    "code": "abc193",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "olaKXBGe-4M5l5VnesP1y"
+  },
+  {
+    "title": "router",
+    "description": "fjrg4k-2",
+    "price": 12345,
+    "thumbnails": [],
+    "code": "abc194",
+    "stock": 25,
+    "status": true,
+    "category": "Componentes PC",
+    "id": "Ic7-Qs65r4Mhd7N6rFpzc"
   }
 ]
