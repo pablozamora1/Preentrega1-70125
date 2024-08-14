@@ -86,5 +86,16 @@
     "category": "impresoras",
     "status": true,
     "id": "-7X"
+  },
+  {
+    "title": "router",
+    "description": "router",
+    "price": "45678",
+    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/5_mx5v46.png",
+    "code": "12345r",
+    "stock": "5",
+    "category": "router",
+    "status": true,
+    "id": "Qwo"
   }
 ]

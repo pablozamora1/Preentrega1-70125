@@ -44,12 +44,14 @@ let messages = [];
 
 io.on("connection", (socket) => {
   // console.log("un cliente nuevo se conecto");
-
+  // chat
   socket.on("message", (data) => {
     messages.push(data);
     io.emit("messagesLogs", messages);
   });
 });
+
+//productos en tiempo real
 
 io.on("connection", async (socket) => {
   //Envia el array de products al cliente que se conectó:
