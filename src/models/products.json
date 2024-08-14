@@ -1,27 +1,5 @@
 [
   {
-    "title": "router",
-    "description": "fjrg4k-2",
-    "price": 12345,
-    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/5_mx5v46.png",
-    "code": "abc190",
-    "stock": 25,
-    "status": true,
-    "category": "Componentes PC",
-    "id": "z5G87Vtzaw8QJpu5IOC_"
-  },
-  {
-    "title": "homeTeather",
-    "description": "Sony muteki 5.2",
-    "price": 100730,
-    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626601/img/2_gcdqjr.png",
-    "code": "abc569",
-    "stock": 355,
-    "status": true,
-    "category": "homeTeather",
-    "id": "3RQpbpgLKfxaFaLdvIUC4"
-  },
-  {
     "title": "mouse",
     "description": "barataso",
     "price": 570,
@@ -99,14 +77,36 @@
     "id": "z5G87Vtzaw8QJpu5IOC_h"
   },
   {
-    "title": "Monitor",
-    "description": "32 pulgadas",
-    "price": 12730,
+    "title": "trsdnghcnh",
+    "description": "gdcgcn",
+    "price": "657856",
     "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1723343151/img/monitor_avwrah.webp",
-    "code": "abc127",
-    "stock": 30,
+    "code": "fh65",
+    "stock": "6",
+    "category": "trsdnghcnh",
     "status": true,
-    "category": "Monitores",
-    "id": "ty6SDpEdNlPOYP-AGOX1A"
+    "id": "Xteylo0RC2Eg5CCRIP5Te"
+  },
+  {
+    "title": "trsdnghcnh",
+    "description": "gdcgcn",
+    "price": "657856",
+    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1723343151/img/monitor_avwrah.webp",
+    "code": "fh65",
+    "stock": "6",
+    "category": "trsdnghcnh",
+    "status": true,
+    "id": "zdoJJM0z41Q5c4RN8JhGV"
+  },
+  {
+    "title": "trsdnghcnh",
+    "description": "gdcgcn",
+    "price": "657856",
+    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1723343151/img/monitor_avwrah.webp",
+    "code": "fh65",
+    "stock": "6",
+    "category": "trsdnghcnh",
+    "status": true,
+    "id": "gLSZbINoHWRCy_97m65mR"
   }
 ]

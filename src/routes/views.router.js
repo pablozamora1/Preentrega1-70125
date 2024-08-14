@@ -16,14 +16,14 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get("/realtimeproducts", async (req, res) => {
-//   try {
-//     res.render("realtimeproducts");
-//   } catch (error) {
-//     res.status(500).json({
-//       error: "Error interno del servidor",
-//     });
-//   }
-// });
+router.get("/realtimeproducts", async (req, res) => {
+  try {
+    res.render("realtimeproducts");
+  } catch (error) {
+    res.status(500).json({
+      error: "Error interno del servidor",
+    });
+  }
+});
 
 export default router;

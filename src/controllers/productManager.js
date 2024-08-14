@@ -31,7 +31,9 @@ class ProductManager {
       let { title, description, price, thumbnail, code, stock } = product;
 
       if (!title || !description || !price || !code || !stock) {
-        return "Todos los campos son obligatorios, por favor completa los campos faltantes";
+        console.log(
+          "Todos los campos son obligatorios, por favor completa los campos faltantes"
+        );
       }
 
       const readProd = await this.readFiles();

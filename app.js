@@ -1,13 +1,15 @@
 import express, { urlencoded, json } from "express";
 import productsRouter from "./src/routes/products.router.js";
+import ProductManager from "./src/controllers/productManager.js";
 import cartRouter from "./src/routes/cart.router.js";
 import { uploader } from "./src/utils/multer.js";
 import { engine } from "express-handlebars";
 import viewsRouter from "./src/routes/views.router.js";
-import { Server, Socket } from "socket.io";
+import { Server } from "socket.io";
 
 const app = express();
-const PUERTO = 8080;
+const PUERTO = 8081;
+const product = new ProductManager();
 
 //Middleware
 app.use(urlencoded({ extended: true }));
@@ -27,6 +29,8 @@ app.post("/", uploader.single("myFile"), (req, res) => {
 
 app.use("/api/products", productsRouter);
 app.use("/api/cart", cartRouter);
+app.use("/api/realtimeproducts", viewsRouter);
+
 //Listen
 const httpServer = app.listen(PUERTO, () => {
   console.log(`escuchando en el http://localhost:${PUERTO}`);
@@ -44,5 +48,26 @@ io.on("connection", (socket) => {
   socket.on("message", (data) => {
     messages.push(data);
     io.emit("messagesLogs", messages);
+  });
+});
+
+io.on("connection", async (socket) => {
+  console.log("Nuevo cliente conectado");
+
+  //Envia el array de products al cliente que se conectó:
+  socket.emit("products", await product.getProducts());
+
+  //Recibe el evento "eliminarProducto" desde el cliente:
+  socket.on("deleteProduct", async (id) => {
+    await product.deleteProduct(id);
+    //Envia el array de products actualizado a todos los products:
+    io.sockets.emit("products", await product.getProducts());
+  });
+
+  //Recibe el evento "agregarProducto" desde el cliente:
+  socket.on("addProduct", async (products) => {
+    await product.addProducts(products);
+    //Envia el array de products actualizado a todos los products:
+    io.sockets.emit("products", await product.getProducts());
   });
 });
