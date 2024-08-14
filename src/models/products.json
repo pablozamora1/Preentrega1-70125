@@ -44,17 +44,6 @@
     "id": "HG0ApjaOT-ikAItRtz7Ha"
   },
   {
-    "title": "impresora",
-    "description": "laser",
-    "price": 35780,
-    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/6_fgkktq.png",
-    "code": "abc124",
-    "stock": 25,
-    "status": true,
-    "category": "Componentes PC",
-    "id": "AW6-S6bAla7_TFqlAmwfy"
-  },
-  {
     "title": "smart-tv",
     "description": "50 pulgadas",
     "price": 46830,
@@ -88,58 +77,14 @@
     "id": "y9SoCMaQhRzVIndRwB7B9"
   },
   {
-    "title": " sd cf f xc",
-    "description": "f vsvSFv",
-    "price": "435",
-    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/9_hxg6e1.png",
-    "code": "rtbrth",
+    "title": "impresora",
+    "description": "laser a color",
+    "price": "45678",
+    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/6_fgkktq.png",
+    "code": "5678",
     "stock": "6",
-    "category": "wervgerv",
+    "category": "impresoras",
     "status": true,
-    "id": "2SZ"
-  },
-  {
-    "title": " sd cf f xc",
-    "description": "f vsvSFv",
-    "price": "435",
-    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/9_hxg6e1.png",
-    "code": "rtbrth",
-    "stock": "6",
-    "category": "wervgerv",
-    "status": true,
-    "id": "GqV"
-  },
-  {
-    "title": " sd cf f xc",
-    "description": "f vsvSFv",
-    "price": "435",
-    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/9_hxg6e1.png",
-    "code": "rtbrth",
-    "stock": "6",
-    "category": "wervgerv",
-    "status": true,
-    "id": "JCQ"
-  },
-  {
-    "title": " sd cf f xc",
-    "description": "f vsvSFv",
-    "price": "435",
-    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/9_hxg6e1.png",
-    "code": "rtbrth",
-    "stock": "6",
-    "category": "wervgerv",
-    "status": true,
-    "id": "Cva"
-  },
-  {
-    "title": " sd cf f xc",
-    "description": "f vsvSFv",
-    "price": "435",
-    "thumbnails": "https://res.cloudinary.com/dhkxkre7f/image/upload/v1705626600/img/9_hxg6e1.png",
-    "code": "rtbrthr",
-    "stock": "6",
-    "category": "wervgerv",
-    "status": true,
-    "id": "gCC"
+    "id": "-7X"
   }
 ]

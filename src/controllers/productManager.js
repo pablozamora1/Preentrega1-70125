@@ -45,7 +45,6 @@ class ProductManager {
         return;
       }
       product.id = nanoid(3);
-      console.log(product);
       const allProducts = [...readProd, product];
       await this.writeProduct(allProducts);
       return product;
