@@ -8,7 +8,7 @@ import viewsRouter from "./src/routes/views.router.js";
 import { Server } from "socket.io";
 
 const app = express();
-const PUERTO = 8081;
+const PUERTO = 8080;
 const product = new ProductManager();
 
 //Middleware
@@ -52,8 +52,6 @@ io.on("connection", (socket) => {
 });
 
 io.on("connection", async (socket) => {
-  console.log("Nuevo cliente conectado");
-
   //Envia el array de products al cliente que se conectó:
   socket.emit("products", await product.getProducts());
 

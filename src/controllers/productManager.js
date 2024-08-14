@@ -39,9 +39,12 @@ class ProductManager {
       const readProd = await this.readFiles();
 
       if (readProd.some((item) => item.code === code)) {
-        return `El Codigo ${code} esta Repetido, por favor cambia el codigo del producto y vuelve a intentarlo `;
+        console.log(
+          `El Codigo ${code} esta Repetido, por favor cambia el codigo del producto y vuelve a intentarlo `
+        );
+        return;
       }
-      product.id = nanoid();
+      product.id = nanoid(3);
       console.log(product);
       const allProducts = [...readProd, product];
       await this.writeProduct(allProducts);

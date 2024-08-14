@@ -1,25 +1,28 @@
-<h1>Productos en Tiempo Real</h1>
+<div class="realTimeBody">
 
-<div id="containerProducts"></div>
-<div class="form">
+    <h1>Productos en Tiempo Real</h1>
 
-    <h2>Formulario para agregar productos </h2>
+    <div class="form">
 
-    <form>
-        <input type="text" id="title" placeholder="Titulo">
-        <input type="text" id="description" placeholder="Descripción">
-        <input type="number" id="price" placeholder="Precio">
-        <input type="text" id="thumbnails" placeholder="Imagen">
-        <input type="text" id="code" placeholder="Código">
-        <input type="number" id="stock" placeholder="Stock">
-        <input type="text" id="category" placeholder="Categoria">
-        <select id="status">
-            <option value="true">Activo</option>
-            <option value="false">Inactivo</option>
-        </select>
-        <button type="button" id="btnEnviar">Enviar</button>
-    </form>
+        <h2>Formulario para agregar productos </h2>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
-    <script src="js/index.js"></script>
+        <form>
+            <input type="text" id="title" placeholder="Titulo">
+            <input type="text" id="description" placeholder="Descripción">
+            <input type="number" id="price" placeholder="Precio">
+            <input type="text" id="thumbnails" placeholder="Imagen">
+            <input type="text" id="code" placeholder="Código">
+            <input type="number" id="stock" placeholder="Stock">
+            <input type="text" id="category" placeholder="Categoria">
+            <select id="status">
+                <option value="true">Activo</option>
+                <option value="false">Inactivo</option>
+            </select>
+            <button type="button" id="btnEnviar">Enviar</button>
+        </form>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+        <script src="js/index.js"></script>
+    </div>
+    <div class="containerProducts" id="containerProducts"></div>
 </div>
