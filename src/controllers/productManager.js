@@ -46,7 +46,7 @@ class ProductManager {
         );
         return;
       }
-      product.id = nanoid(3);
+      product.id = nanoid();
       const allProducts = [...readProd, product];
       await this.writeProduct(allProducts);
       return product;
