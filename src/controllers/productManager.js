@@ -40,7 +40,6 @@ class ProductManager {
       const readProd = await this.readFiles();
 
       if (readProd.some((item) => item.code === code)) {
-        Swal.fire("SweetAlert2 is working!");
         console.log(
           `El Codigo ${code} esta Repetido, por favor cambia el codigo del producto y vuelve a intentarlo `
         );
