@@ -1,6 +1,6 @@
 import { promises as fs } from "fs";
 import { nanoid } from "nanoid";
-import Swal from "sweetalert2";
+
 
 class ProductManager {
   constructor() {
