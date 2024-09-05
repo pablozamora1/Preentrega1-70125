@@ -5,10 +5,8 @@ import ProductManager from "./src/dao/db/product_Manager_db.js";
 import { uploader } from "./src/utils/multer.js";
 import { engine } from "express-handlebars";
 import viewsRouter from "./src/routes/views.router.js";
-// import { Server } from "socket.io";
+import { Server } from "socket.io";
 import "./src/database.js";
-
-
 
 const app = express();
 const PUERTO = 8080;
@@ -35,6 +33,42 @@ app.use("/api/cart", cartRouter);
 app.use("/api/realtimeproducts", viewsRouter);
 
 //Listen
-app.listen(PUERTO, () => {
+const httpServer = app.listen(PUERTO, () => {
   console.log(`escuchando en el http://localhost:${PUERTO}`);
+});
+
+// Socket.io
+
+const io = new Server(httpServer);
+
+let messages = [];
+
+io.on("connection", (socket) => {
+  // console.log("un cliente nuevo se conecto");
+  // chat
+  socket.on("message", (data) => {
+    messages.push(data);
+    io.emit("messagesLogs", messages);
+  });
+});
+
+//productos en tiempo real
+
+io.on("connection", async (socket) => {
+  //Envia el array de products al cliente que se conectó:
+  socket.emit("products", await product.getProducts());
+
+  //Recibe el evento "eliminarProducto" desde el cliente:
+  socket.on("deleteProduct", async (id) => {
+    await product.deleteProduct(id);
+    //Envia el array de products actualizado a todos los products:
+    io.sockets.emit("products", await product.getProducts());
+  });
+
+  //Recibe el evento "agregarProducto" desde el cliente:
+  socket.on("addProduct", async (products) => {
+    await product.addProduct(products);
+    //Envia el array de products actualizado a todos los products:
+    io.sockets.emit("products", await product.getProducts());
+  });
 });

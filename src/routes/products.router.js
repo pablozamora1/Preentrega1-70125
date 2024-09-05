@@ -8,11 +8,12 @@ const router = Router();
 router.post("/", async (req, res) => {
   try {
     const newProduct = req.body;
-    res.send(await product.addProducts(newProduct));
+    res.send(await product.addProduct(newProduct));
   } catch (error) {
     res.send("Error al agregar el producto", error);
   }
 });
+
 //buscar productos por id
 router.get("/:pid", async (req, res) => {
   try {
@@ -22,6 +23,7 @@ router.get("/:pid", async (req, res) => {
     res.send("Error al buscar el producto", error);
   }
 });
+
 // traer los productos
 router.get("/", async (req, res) => {
   try {

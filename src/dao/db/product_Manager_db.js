@@ -19,7 +19,6 @@ class ProductManager {
       }
 
       const existProduct = await ProductModel.findOne({ code: code });
-
       if (existProduct) {
         console.log("El código debe ser único");
         return;
@@ -47,6 +46,7 @@ class ProductManager {
   async getProducts() {
     try {
       const products = await ProductModel.find();
+      console.log(products)
       return products;
     } catch (error) {
       console.log("Error al obtener los productos", error);
