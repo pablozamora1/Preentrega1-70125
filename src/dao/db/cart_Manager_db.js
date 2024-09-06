@@ -3,9 +3,12 @@ import CartModel from "../models/cart.model.js";
 class CartManager {
   async createCart() {
     try {
-      const newCart = new CartModel({ products: [] });
-      await newCart.save();
-      return newCart;
+      const cart = new CartModel();
+      await cart.save();
+      return cart;
+      // const newCart = new CartModel({ products: [] });
+      // await newCart.save();
+      // return newCart;
     } catch (error) {
       console.log("No se pudo crear el nuevo carrito", error);
     }
@@ -15,12 +18,14 @@ class CartManager {
     try {
       const cart = await CartModel.findById(id);
       if (!cart) {
-        console.log("No existe un carrito con ese id");
-        return null;
+        return res
+          .status(404)
+          .json({ msg: `El carrito con id ${id} no existe` });
       }
       return cart;
     } catch (error) {
       console.log("No se pudo encontrar al carrito por id", error);
+      return res.status(404).json({ msg: `El carrito con id ${id} no existe` });
     }
   }
 

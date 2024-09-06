@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 mongoose
   .connect(
-    "mongodb+srv://pablo:123@pablo.pj8ek.mongodb.net/?retryWrites=true&w=majority&appName=pablo"
+    "mongodb+srv://pablo:123@ecomerce.qkdc0.mongodb.net/ecomerce?retryWrites=true&w=majority&appName=ecomerce"
   )
   .then(() => {
     console.log("coneccion exitosa");

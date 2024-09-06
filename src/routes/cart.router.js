@@ -1,5 +1,5 @@
 import { Router } from "express";
-import cartManager from "../dao/db/product_Manager_db.js";
+import cartManager from "../dao/db/cart_Manager_db.js";
 
 const router = Router();
 const cart = new cartManager();
@@ -9,7 +9,8 @@ router.post("/", async (req, res) => {
   try {
     res.send(await cart.addCart());
   } catch (error) {
-    res.send("Error al Agregar el Carrito", error);
+    console.log("Error al Agregar el Carrito");
+    // res.status(200).send("Error al Agregar el Carrito", error);
   }
 });
 //leer carrito
