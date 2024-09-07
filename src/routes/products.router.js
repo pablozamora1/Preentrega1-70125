@@ -27,7 +27,7 @@ router.get("/:pid", async (req, res) => {
 // traer los productos
 router.get("/", async (req, res) => {
   try {
-    const limit = req.query.limit;
+    const {limit} = req.query.limit;
     const products = await product.getProducts();
     if (limit) {
       res.json(products.slice(0, limit));
