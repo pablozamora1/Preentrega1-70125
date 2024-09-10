@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
     const newProduct = req.body;
     res.send(await product.addProduct(newProduct));
   } catch (error) {
-    res.send("Error al agregar el producto", error);
+    res.status(500).json({error:"Error al agregar el producto"});
   }
 });
 
@@ -20,22 +20,24 @@ router.get("/:pid", async (req, res) => {
     const pid = req.params.pid;
     res.send(await product.getProductById(pid));
   } catch (error) {
-    res.send("Error al buscar el producto", error);
+    res.status(500).json({ error: "Error al buscar el producto" });
   }
 });
 
 // traer los productos
 router.get("/", async (req, res) => {
   try {
-    const {limit} = req.query.limit;
     const products = await product.getProducts();
-    if (limit) {
-      res.json(products.slice(0, limit));
-    } else {
+    const limit = req.query.limit;
+    if (!limit) {
       res.json(products);
+    } else {
+      res.json(products.slice(0, limit));
     }
+    res.json(products);
   } catch (error) {
-    res.send("Error al traer los productos", error);
+    res.status(500).json({ error: "Error al traer los productos" });
+    
   }
 });
 

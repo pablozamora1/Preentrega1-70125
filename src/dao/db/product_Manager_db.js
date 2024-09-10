@@ -47,6 +47,7 @@ class ProductManager {
     try {
       const products = await ProductModel.find();
       return products;
+      
     } catch (error) {
       console.log("Error al obtener los productos", error);
     }
