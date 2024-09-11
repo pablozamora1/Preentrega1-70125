@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
     res.json(products);
   } catch (error) {
     res.status(500).json({ error: "Error al traer los productos" });
-    
+     
   }
 });
 
@@ -47,7 +47,7 @@ router.delete("/:pid", async (req, res) => {
     const pid = req.params.pid;
     res.send(await product.deleteProduct(pid));
   } catch (error) {
-    res.send("Error al eliminar el producto", error);
+    res.status(500).json({ error: "Error al eliminar el producto" });
   }
 });
 //actualizar el producto
@@ -57,7 +57,7 @@ router.put("/:pid", async (req, res) => {
     const updatedProduct = req.body;
     res.send(await product.updateProduct(pid, updatedProduct));
   } catch (error) {
-    res.send("Error al actualizar el producto", error);
+    res.status(500).json({ error: "Error al actualizar el producto" });
   }
 });
 

@@ -45,13 +45,27 @@ class ProductManager {
   // FUNCION PARA OBTENER LOS PRODUCTOS
   async getProducts() {
     try {
-      const products = await ProductModel.find();
+      const products = await ProductModel.find().lean();
       return products;
-      
     } catch (error) {
       console.log("Error al obtener los productos", error);
     }
   }
+
+  //   async getProductsPaginated (page = 1, limit = 5, query = {}, title = '', order = 'asc') {
+  //   const searchQuery = { $or: [{ title: { $regex: title, $options: 'i' } }] }
+  //   const filter = { ...searchQuery, ...query }
+  //   const sortPrice = order == 'asc' ? 1 : -1
+
+  //   const result = await Product.paginate(filter, {
+  //     page,
+  //     limit,
+  //     sort: { price: sortPrice },
+  //     lean: true
+  //   })
+
+  //   return result
+  // }
   // FUNCION PARA BUSCAR UN PRODUCTO POR ID
   async getProductById(id) {
     try {
