@@ -2,6 +2,7 @@ import express, { urlencoded, json } from "express";
 import productsRouter from "./src/routes/products.router.js";
 import cartRouter from "./src/routes/cart.router.js";
 import ProductManager from "./src/dao/db/product_Manager_db.js";
+import { __dirname } from "./src/utils/dirname.js";
 import { uploader } from "./src/utils/multer.js";
 import { engine } from "express-handlebars";
 import viewsRouter from "./src/routes/views.router.js";
@@ -15,7 +16,8 @@ const product = new ProductManager();
 //Middleware
 app.use(urlencoded({ extended: true }));
 app.use(json());
-app.use(express.static("./public"));
+app.use(express.static(`${__dirname}/public`));
+// app.use(express.static("./src/public"));
 // handlebars
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
