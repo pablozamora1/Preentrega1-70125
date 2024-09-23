@@ -56,7 +56,7 @@ const renderProducts = (products) => {
     card.innerHTML = `
     <p>Titulo: ${item.title} </p>
     <p>Precio: ${item.price} </p>
-    <p>Id: ${item.id} </p>
+    <p>Id: ${item._id} </p>
     <img src="${item.thumbnails}" alt="">
     <button> Eliminar Producto </button>
         
@@ -65,14 +65,14 @@ const renderProducts = (products) => {
 
     //Agregamos el evento eliminar producto:
     card.querySelector("button").addEventListener("click", () => {
-      deleteProduct(item.id);
+      deleteProduct(item._id);
     });
   });
 };
 
 //Eliminar producto:
-const deleteProduct = (id) => {
-  socket.emit("deleteProduct", id);
+const deleteProduct = (_id) => {
+  socket.emit("deleteProduct", _id);
 };
 
 //Agregar producto:

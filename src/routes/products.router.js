@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
     const newProduct = req.body;
     res.send(await product.addProduct(newProduct));
   } catch (error) {
-    res.status(500).json({error:"Error al agregar el producto"});
+    res.status(500).json({ error: "Error al agregar el producto" });
   }
 });
 
@@ -37,19 +37,19 @@ router.get("/", async (req, res) => {
     res.json(products);
   } catch (error) {
     res.status(500).json({ error: "Error al traer los productos" });
-     
   }
 });
 
 // delete productos
 router.delete("/:pid", async (req, res) => {
   try {
-    const pid = req.params.pid;
+    const pid = req.params._id;
     res.send(await product.deleteProduct(pid));
   } catch (error) {
     res.status(500).json({ error: "Error al eliminar el producto" });
   }
 });
+
 //actualizar el producto
 router.put("/:pid", async (req, res) => {
   try {

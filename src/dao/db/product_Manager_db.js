@@ -101,10 +101,9 @@ class ProductManager {
   }
 
   // FUNCION PARA ELIMINAR UN PRODUCTO
-  async deleteProduct(id) {
+  async deleteProduct(_id) {
     try {
-      const deleted = await ProductModel.findByIdAndDelete(id);
-
+      const deleted = await ProductModel.findByIdAndDelete(_id);
       if (!deleted) {
         console.log(
           "No se encuentra el producto a eliminar, intente nuevamente"

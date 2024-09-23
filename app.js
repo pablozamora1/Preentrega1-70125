@@ -7,7 +7,7 @@ import { uploader } from "./src/utils/multer.js";
 import { engine } from "express-handlebars";
 import viewsRouter from "./src/routes/views.router.js";
 import { Server } from "socket.io";
-import "./src/database.js";
+import "./src/database/database.js";
 
 const app = express();
 const PUERTO = 8080;
@@ -59,6 +59,7 @@ io.on("connection", (socket) => {
 io.on("connection", async (socket) => {
   //Envia el array de products al cliente que se conectó:
   socket.emit("products", await product.getProducts());
+  
 
   //Recibe el evento "eliminarProducto" desde el cliente:
   socket.on("deleteProduct", async (id) => {
