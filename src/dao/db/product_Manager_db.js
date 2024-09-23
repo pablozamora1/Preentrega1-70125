@@ -67,9 +67,9 @@ class ProductManager {
   //   return result
   // }
   // FUNCION PARA BUSCAR UN PRODUCTO POR ID
-  async getProductById(id) {
+  async getProductById(_id) {
     try {
-      const product = await ProductModel.findById(id);
+      const product = await ProductModel.findById(_id);
 
       if (!product) {
         console.log("Producto no encontrado");
@@ -84,9 +84,9 @@ class ProductManager {
   }
 
   // FUNCION PARA ACTUALIZAR UN PRODUCTO
-  async updateProduct(id, productUpdated) {
+  async updateProduct(_id, productUpdated) {
     try {
-      const updated = await ProductModel.findByIdAndUpdate(id, productUpdated);
+      const updated = await ProductModel.findByIdAndUpdate(_id, productUpdated);
 
       if (!updated) {
         console.log("No se encuentra el producto");
