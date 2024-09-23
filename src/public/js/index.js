@@ -56,7 +56,7 @@ const renderProducts = (products) => {
     card.innerHTML = `
     <p>Titulo: ${item.title} </p>
     <p>Precio: ${item.price} </p>
-    <p>Id: ${item._id} </p>
+    <p>Categoria: ${item.category} </p>
     <img src="${item.thumbnails}" alt="">
     <button> Eliminar Producto </button>
         
