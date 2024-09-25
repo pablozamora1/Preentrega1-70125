@@ -15,4 +15,15 @@
     </div>
     {{/each}}
 
+
+
 </div>
+
+{{#if hasNextPage}}
+<a href="/?page={{nextPage}}">Siguiente</a>
+{{/if }}
+<p>pagina {{page}} de {{totalPages}}</p>
+
+{{#if hasPrevPage}}
+<a href="/?page={{prevPage}}">anterior</a>
+{{/if }}

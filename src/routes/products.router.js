@@ -28,17 +28,46 @@ router.get("/:pid", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const products = await product.getProducts();
-    const limit = req.query.limit;
-    if (!limit) {
-      res.json(products);
-    } else {
-      res.json(products.slice(0, limit));
-    }
     res.json(products);
   } catch (error) {
     res.status(500).json({ error: "Error al traer los productos" });
   }
 });
+
+router.get(
+  "/products/paginated",
+  async (req, res, next) => {
+    try {
+      const { page = 1, limit = 8, query = {}, sort, title = "" } = req.query;
+      const queryObject =
+        typeof query === "string" && query !== "" ? JSON.parse(query) : {};
+
+      
+
+      const productP = await product.getProductsPag(
+        page,
+        limit,
+        queryObject,
+        title,
+        sort
+      );
+
+      res.send({
+        products: productP.docs,
+        pagination: {
+          totalPages: productP.totalPages,
+          page: Number(productP.page),
+          hasPrevPage: productP.hasPrevPage,
+          hasNextPage: productP.hasNextPage,
+          prevPage: productP.prevPage,
+          nextPage: productP.nextPage,
+        },
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 // delete productos
 router.delete("/:pid", async (req, res) => {

@@ -17,6 +17,11 @@ const cartSchema = Schema({
   ],
 });
 
+cartSchema.pre("findOne", function (next) {
+  this.populate("Product");
+  next();
+});
+
 const CartModel = model(nameCoollection, cartSchema);
 
 export default CartModel;

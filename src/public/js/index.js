@@ -55,8 +55,8 @@ const renderProducts = (products) => {
     //Agregamos boton para eliminar:
     card.innerHTML = `
     <p>Titulo: ${item.title} </p>
+    <p>Descripcion: ${item.description} </p>
     <p>Precio: ${item.price} </p>
-    <p>Categoria: ${item.category} </p>
     <img src="${item.thumbnails}" alt="">
     <button> Eliminar Producto </button>
         

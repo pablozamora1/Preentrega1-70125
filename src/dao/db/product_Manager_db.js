@@ -51,21 +51,28 @@ class ProductManager {
       console.log("Error al obtener los productos", error);
     }
   }
+  // FUNCION PARA OBTENER LOS PRODUCTOS EN PAGINAS
+  async getProductsPag(
+    page = 1,
+    limit = 5,
+    query = {},
+    title = "",
+    order = "asc"
+  ) {
+    const searchQuery = { $or: [{ title: { $regex: title, $options: "i" } }] };
+    const filter = { ...searchQuery, ...query };
+    const sortPrice = order == "asc" ? 1 : -1;
 
-  //   async getProductsPaginated (page = 1, limit = 5, query = {}, title = '', order = 'asc') {
-  //   const searchQuery = { $or: [{ title: { $regex: title, $options: 'i' } }] }
-  //   const filter = { ...searchQuery, ...query }
-  //   const sortPrice = order == 'asc' ? 1 : -1
+    const productsPag = await ProductModel.paginate(filter, {
+      page,
+      limit,
+      sort: { price: sortPrice },
+      lean: true,
+    });
 
-  //   const result = await Product.paginate(filter, {
-  //     page,
-  //     limit,
-  //     sort: { price: sortPrice },
-  //     lean: true
-  //   })
+    return productsPag;
+  }
 
-  //   return result
-  // }
   // FUNCION PARA BUSCAR UN PRODUCTO POR ID
   async getProductById(_id) {
     try {

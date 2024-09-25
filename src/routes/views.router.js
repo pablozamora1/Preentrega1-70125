@@ -6,10 +6,20 @@ const product = new ProductManager();
 
 router.get("/", async (req, res) => {
   try {
-    const allProducts = await product.getProducts();
-    res.render("index", { products: allProducts, title: "Ecomerce-Tech" });
+    const { page = 1, limit = 5 } = req.query;
+
+    const result = await product.getProductsPag(page, limit);
+
+    res.render("index", {
+      products: result.docs,
+      totalPages: result.totalPages,
+      page: Number(result.page),
+      hasPrevPage: result.hasPrevPage,
+      hasNextPage: result.hasNextPage,
+      prevPage: result.prevPage,
+      nextPage: result.nextPage,
+    });
   } catch (error) {
-    console.error("Error al obtener productos", error);
     res.status(500).json({
       error: "Error interno del servidor",
     });
