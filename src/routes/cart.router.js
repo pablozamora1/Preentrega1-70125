@@ -25,8 +25,8 @@ router.get("/", async (req, res) => {
 //buscar carrito por id
 router.get("/:cId", async (req, res) => {
   try {
-    const cId = req.params.cId;
-    res.send(await cart.getCartById(cId));
+    const cartId = req.params.cId;
+    res.send(await cart.getCartById(cartId));
   } catch (error) {
     res.send("Error al Buscar los Carritos por ID", error);
   }
@@ -36,9 +36,10 @@ router.post("/:cId/products/:pId", async (req, res) => {
   try {
     const idCart = req.params.cId;
     const idProduct = req.params.pId;
-    res.send(await cart.addToCart(idCart, idProduct));
+    res.send(await cart.addProductToCart(idCart, idProduct));
   } catch (error) {
-    res.send("Error al Agregar productos al Carrito", error);
+    console.log(error);
+    res.status(500).json({ error: "Error al Agregar productos al Carrito" });
   }
 });
 
@@ -48,7 +49,7 @@ router.delete("/:cId", async (req, res) => {
     const cId = req.params.cId;
     res.send(await cart.deleteProductCart(cId));
   } catch (error) {
-    res.send("Error al eliminar el carrito", error);
+    console.log("Error al eliminar el carrito", error);
   }
 });
 
@@ -57,7 +58,7 @@ router.delete("/", async (req, res) => {
   try {
     res.send(await cart.clearCart());
   } catch (error) {
-    res.send("Error al Leer el Carrito", error);
+    console.log("Error al Leer el Carrito", error);
   }
 });
 //actualizar el carrito
@@ -67,7 +68,7 @@ router.put("/:cId", async (req, res) => {
     const updateCart = req.body;
     res.send(await cart.updateCart(cId, updateCart));
   } catch (error) {
-    res.send("Error al actualizar el producto", error);
+    console.log("Error al actualizar el producto", error);
   }
 });
 

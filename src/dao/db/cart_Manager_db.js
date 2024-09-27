@@ -7,7 +7,7 @@ class CartManager {
       await newCart.save();
       return newCart;
     } catch (error) {
-      return res.status(404).json({ msg: "No se puede crear un carrito" });
+      return console.log("No se puede crear un carrito", error);
     }
   }
 
@@ -16,42 +16,43 @@ class CartManager {
       const cart = await CartModel.find();
       return cart;
     } catch (error) {
-      return res.status(404).json({ msg: "No se puede traer los carrito" });
+      return console.log("No se puede traer los carrito", error);
     }
   }
-  async getCartById(id) {
+  async getCartById(cartId) {
     try {
-      const cart = await CartModel.findById(id);
+      const cart = await CartModel.findById(cartId);
       if (!cart) {
-        return res
-          .status(404)
-          .json({ msg: `El carrito con id ${id} no existe` });
+        return console.log(`El carrito con _id ${cartId} no existe`, error);
       }
       return cart;
     } catch (error) {
-      return res.status(404).json({ msg: `El carrito con id ${id} no existe` });
+      throw (error, console.log(`El carrito con _id ${cartId} no existe`));
     }
   }
 
-  async addProductToCart(cartId, productId, quantity = 1) {
+  async addProductToCart(idCart, idProduct, quantity = 1) {
     try {
-      const cart = await this.getCartById(cartId);
+      console.log(idProduct);
+      console.log(idCart);
+      const cart = await this.getCartById(idCart);
+      console.log(cart);
       const existProduct = cart.products.find(
-        (item) => item.product.toString() === productId
+        (item) => item.products.toString() === idProduct
       );
       if (existProduct) {
         existProduct.quantity += quantity;
       } else {
-        cart.products.push({ product: productId, quantity });
+        cart.products.push({ products: idProduct, quantity });
       }
       cart.markModified("products");
       await cart.save();
       return cart;
     } catch (error) {
-      return res.status(404).json({
-        msg: `no se puede agregar un product al carrito con id ${id}`,
-        error,
-      });
+      return console.log(
+        `no se puede agregar un product al carrito con id ${idCart}`,
+        error
+      );
     }
   }
 
@@ -67,10 +68,7 @@ class CartManager {
       await cart.save();
       return cart;
     } catch (error) {
-      return res.status(404).json({
-        msg: `no se puede eliminar el carrito con id ${id}`,
-        error,
-      });
+      console.log(`no se puede eliminar el carrito con id ${id}`);
     }
   }
 
@@ -85,10 +83,7 @@ class CartManager {
       await cart.save();
       return cart;
     } catch (error) {
-      return res.status(404).json({
-        msg: `no se puede actualizar el carrito con id ${id}`,
-        error,
-      });
+      return console.log(`no se puede actualizar el carrito con id ${id}`);
     }
   }
 
@@ -108,10 +103,7 @@ class CartManager {
         return cart;
       }
     } catch (error) {
-      return res.status(404).json({
-        msg: "No se pudo actualizar la cantidad del producto",
-        error,
-      });
+      console.log("No se pudo actualizar la cantidad del producto");
     }
   }
 
