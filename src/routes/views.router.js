@@ -36,4 +36,26 @@ router.get("/realtimeproducts", async (req, res) => {
   }
 });
 
+router.get("/products", async (req, res, next) => {
+  try {
+    const { page = 1, limit = 4 } = req.query;
+
+    const result = await product.getProductsPag(page, limit);
+
+    res.render("home", {
+      products: result.docs,
+      pagination: {
+        totalPages: result.totalPages,
+        page: Number(result.page),
+        hasPrevPage: result.hasPrevPage,
+        hasNextPage: result.hasNextPage,
+        prevPage: result.prevPage,
+        nextPage: result.nextPage,
+      },
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
 export default router;

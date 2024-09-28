@@ -28,7 +28,7 @@ router.get("/:cId", async (req, res) => {
     const cartId = req.params.cId;
     res.send(await cart.getCartById(cartId));
   } catch (error) {
-    res.send("Error al Buscar los Carritos por ID", error);
+    console.log("Error al Buscar los Carritos por ID", error);
   }
 });
 // agregar productos al carrito

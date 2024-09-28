@@ -1,9 +1,9 @@
 import CartModel from "../models/cart.model.js";
-
 class CartManager {
   async createCart() {
     try {
-      const newCart = new CartModel({ products: [] });
+      // { products: [] }
+      const newCart = new CartModel();
       await newCart.save();
       return newCart;
     } catch (error) {
@@ -33,20 +33,24 @@ class CartManager {
 
   async addProductToCart(idCart, idProduct, quantity = 1) {
     try {
-      console.log(idProduct);
-      console.log(idCart);
       const cart = await this.getCartById(idCart);
-      console.log(cart);
+      // const existProduct = cart.products.find(
+      //   (item) => item.products.toString() === idProduct
+      // );
+
       const existProduct = cart.products.find(
-        (item) => item.products.toString() === idProduct
-      );
+        (i) => i.products.toString()
+      )
+
+
+      console.log(cart);
       if (existProduct) {
         existProduct.quantity += quantity;
       } else {
         cart.products.push({ products: idProduct, quantity });
       }
       cart.markModified("products");
-      await cart.save();
+      // await cart.save();
       return cart;
     } catch (error) {
       return console.log(
